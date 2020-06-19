@@ -89,7 +89,7 @@ def login(q):
         r.headers = {'user-agent': user_agent}
         r.headers.update({'Referer': 'https://i.instagram.com/'})
         r.headers.update({'X-CSRFToken': "missing"})
-        data = {"username": user, "password": password}
+        data = {"username": user, "&enc_password=#PWD_INSTAGRAM_BROWSER:0:1589682409:": password ,"&queryParams={}&optIntoOneTap=false"}
         loginreq = r.post(url, data=data, allow_redirects=True,timeout=timeout).json()
 
         text = str(loginreq)
